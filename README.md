@@ -129,14 +129,3 @@ For a comprehensive overview of the results:
 2. **For interpretability:** Use the CORE tree model
 3. **For policy implications:** Focus on mentorship programs
 4. **For future research:** Consider additional variables related to research funding and institutional support
-
-## Author
-
-Aayush Gala
-May 2025
-
-## References
-
-- Cameron, A. C., & Trivedi, P. K. (2013). Regression analysis of count data (Vol. 53). Cambridge University Press.
-- Breiman, L., Friedman, J., Stone, C. J., & Olshen, R. A. (1984). Classification and regression trees. CRC Press.
-- Long, J. S. (1997). Regression models for categorical and limited dependent variables. Sage Publications.
