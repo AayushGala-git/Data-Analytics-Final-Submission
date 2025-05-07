@@ -1,0 +1,22 @@
+MODEL EVALUATION & DIAGNOSTICS SUMMARY
+=====================================
+
+Analysis Date: 2025-05-07 18:38:55
+
+Cross-Validation Results:
+               Model       MAE       MSE      RMSE  LogLikelihood          AIC          BIC
+0            Poisson  1.333812  3.441510  1.855131   -1485.396468  2982.792935  3011.074315
+1  Negative Binomial  1.343376  3.494349  1.869318   -1404.515947  2823.031894  2856.026838
+2                ZIP       NaN       NaN       NaN            NaN          NaN          NaN
+3          CORE Tree  1.317468  3.482760  1.866215            NaN          NaN          NaN
+
+Best model based on RMSE: Poisson
+Best model based on AIC: Negative Binomial
+
+Key Findings:
+1. The data shows significant over-dispersion, as indicated by the Cameron-Trivedi test.
+2. There is evidence of zero-inflation in the data.
+3. The Negative Binomial model generally outperforms the Poisson model due to its ability to handle over-dispersion.
+4. The CORE tree provides interpretable splits that reveal important variable thresholds.
+5. The number of mentors is the most important predictor of publication counts.
+6. Gender, marital status, and having young children also impact publication productivity.

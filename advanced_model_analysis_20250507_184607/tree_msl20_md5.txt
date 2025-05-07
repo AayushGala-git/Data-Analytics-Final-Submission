@@ -1,0 +1,55 @@
+|--- Mentors <= 17.50
+|   |--- Mentors <= 2.50
+|   |   |--- Marital Status <= 0.50
+|   |   |   |--- PhD Quality <= 3.50
+|   |   |   |   |--- PhD Quality <= 2.03
+|   |   |   |   |   |--- value: [1.42]
+|   |   |   |   |--- PhD Quality >  2.03
+|   |   |   |   |   |--- value: [0.76]
+|   |   |   |--- PhD Quality >  3.50
+|   |   |   |   |--- Kids under 5 <= 0.50
+|   |   |   |   |   |--- value: [1.80]
+|   |   |   |   |--- Kids under 5 >  0.50
+|   |   |   |   |   |--- value: [1.19]
+|   |   |--- Marital Status >  0.50
+|   |   |   |--- PhD Quality <= 3.20
+|   |   |   |   |--- Mentors <= 0.50
+|   |   |   |   |   |--- value: [0.35]
+|   |   |   |   |--- Mentors >  0.50
+|   |   |   |   |   |--- value: [0.61]
+|   |   |   |--- PhD Quality >  3.20
+|   |   |   |   |--- value: [0.83]
+|   |--- Mentors >  2.50
+|   |   |--- Mentors <= 10.50
+|   |   |   |--- PhD Quality <= 3.56
+|   |   |   |   |--- PhD Quality <= 2.45
+|   |   |   |   |   |--- value: [1.47]
+|   |   |   |   |--- PhD Quality >  2.45
+|   |   |   |   |   |--- value: [1.84]
+|   |   |   |--- PhD Quality >  3.56
+|   |   |   |   |--- PhD Quality <= 4.32
+|   |   |   |   |   |--- value: [1.24]
+|   |   |   |   |--- PhD Quality >  4.32
+|   |   |   |   |   |--- value: [1.85]
+|   |   |--- Mentors >  10.50
+|   |   |   |--- PhD Quality <= 4.44
+|   |   |   |   |--- PhD Quality <= 4.27
+|   |   |   |   |   |--- value: [2.05]
+|   |   |   |   |--- PhD Quality >  4.27
+|   |   |   |   |   |--- value: [1.41]
+|   |   |   |--- PhD Quality >  4.44
+|   |   |   |   |--- value: [2.70]
+|--- Mentors >  17.50
+|   |--- Gender (Female) <= 0.50
+|   |   |--- Mentors <= 32.50
+|   |   |   |--- Kids under 5 <= 0.50
+|   |   |   |   |--- value: [3.66]
+|   |   |   |--- Kids under 5 >  0.50
+|   |   |   |   |--- value: [2.63]
+|   |   |--- Mentors >  32.50
+|   |   |   |--- value: [4.30]
+|   |--- Gender (Female) >  0.50
+|   |   |--- Marital Status <= 0.50
+|   |   |   |--- value: [2.91]
+|   |   |--- Marital Status >  0.50
+|   |   |   |--- value: [1.45]

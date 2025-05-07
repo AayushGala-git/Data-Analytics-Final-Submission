@@ -1,0 +1,22 @@
+|--- Mentors <= 17.50
+|   |--- Mentors <= 2.50
+|   |   |--- Marital Status <= 0.50
+|   |   |   |--- value: [1.12]
+|   |   |--- Marital Status >  0.50
+|   |   |   |--- value: [0.61]
+|   |--- Mentors >  2.50
+|   |   |--- Mentors <= 10.50
+|   |   |   |--- value: [1.59]
+|   |   |--- Mentors >  10.50
+|   |   |   |--- value: [2.02]
+|--- Mentors >  17.50
+|   |--- Gender (Female) <= 0.50
+|   |   |--- Mentors <= 32.50
+|   |   |   |--- value: [3.16]
+|   |   |--- Mentors >  32.50
+|   |   |   |--- value: [4.30]
+|   |--- Gender (Female) >  0.50
+|   |   |--- Marital Status <= 0.50
+|   |   |   |--- value: [2.91]
+|   |   |--- Marital Status >  0.50
+|   |   |   |--- value: [1.45]

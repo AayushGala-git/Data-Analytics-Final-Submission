@@ -1,0 +1,296 @@
+Advanced Count Modeling Analysis - 2025-05-07 18:26:56
+Results will be saved to: count_modeling_results_20250507_182656.txt
+--------------------------------------------------------------------------------
+Loading biochemists data...
+
+======================================================================
+4. TESTS FOR OVER-DISPERSION AND ZERO-INFLATION
+======================================================================
+
+4.1 Cameron-Trivedi Dispersion Test
+----------------------------------------
+Cameron & Trivedi Dispersion Test:
+Coefficient: 0.5091
+Standard Error: 0.0886
+t-value: 5.7478
+p-value: 0.0000
+Result: Significant over-dispersion detected (variance > mean)
+
+4.2 Test for Zero-Inflation
+----------------------------------------
+Observed zero proportion: 0.3005 (275 / 915)
+Expected zero proportion under Poisson: 0.2092 (191.4 / 915)
+
+Score Test for Zero-Inflation:
+Score statistic: 6.2006
+p-value: 0.0000
+Result: Significant zero-inflation detected
+
+Found statsmodels count models...
+
+4.3 Vuong Test for Non-Nested Models
+----------------------------------------
+Fitting Poisson model...
+Fitting Zero-Inflated Poisson model...
+Optimization terminated successfully.
+         Current function value: 1.771349
+         Iterations: 19
+         Function evaluations: 25
+         Gradient evaluations: 25
+
+Vuong Test for Poisson vs. ZIP:
+Vuong statistic: 0.8881
+p-value: 0.3745
+Result: Neither model is significantly preferred
+
+======================================================================
+5. BASELINE COUNT MODELS
+======================================================================
+
+5.1 Poisson Regression Model
+----------------------------------------
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:                    art   No. Observations:                  915
+Model:                            GLM   Df Residuals:                      909
+Model Family:                 Poisson   Df Model:                            5
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -1651.1
+Date:                Wed, 07 May 2025   Deviance:                       1634.4
+Time:                        18:26:56   Pearson chi2:                 1.66e+03
+No. Iterations:                     5   Pseudo R-squ. (CS):             0.1813
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept          0.3046      0.103      2.958      0.003       0.103       0.506
+fem_dummy[T.1]    -0.2246      0.055     -4.112      0.000      -0.332      -0.118
+mar_dummy[T.1]     0.1552      0.061      2.529      0.011       0.035       0.276
+kid5              -0.1849      0.040     -4.607      0.000      -0.264      -0.106
+phd                0.0128      0.026      0.486      0.627      -0.039       0.065
+ment               0.0255      0.002     12.733      0.000       0.022       0.029
+==================================================================================
+
+Goodness-of-fit Test:
+Pearson Chi² = 1662.5466, df = 909
+p-value = 0.000000
+Result: Significant lack of fit (model does not fit the data well)
+
+5.2 Negative Binomial Regression Model
+----------------------------------------
+                     NegativeBinomial Regression Results                      
+==============================================================================
+Dep. Variable:                    art   No. Observations:                  915
+Model:               NegativeBinomial   Df Residuals:                      909
+Method:                           MLE   Df Model:                            5
+Date:                Wed, 07 May 2025   Pseudo R-squ.:                 0.03042
+Time:                        18:26:56   Log-Likelihood:                -1561.0
+converged:                       True   LL-Null:                       -1609.9
+Covariance Type:            nonrobust   LLR p-value:                 1.424e-19
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.2561      0.139      1.849      0.065      -0.015       0.528
+fem_dummy     -0.2164      0.073     -2.978      0.003      -0.359      -0.074
+mar_dummy      0.1505      0.082      1.833      0.067      -0.010       0.311
+kid5          -0.1764      0.053     -3.325      0.001      -0.280      -0.072
+phd            0.0153      0.036      0.424      0.672      -0.055       0.086
+ment           0.0291      0.003      8.381      0.000       0.022       0.036
+alpha          0.4416      0.053      8.338      0.000       0.338       0.545
+==============================================================================
+
+Model Comparison (AIC/BIC):
+Poisson AIC: 3314.1126, BIC: -4564.0310
+Neg. Binomial AIC: 3135.9167, BIC: 3169.6491
+Result: Negative Binomial model has better fit (lower AIC)
+
+5.3 Zero-Inflated and Hurdle Models
+----------------------------------------
+Optimization terminated successfully.
+         Current function value: 1.771349
+         Iterations: 19
+         Function evaluations: 25
+         Gradient evaluations: 25
+Zero-Inflated Poisson Model:
+                     ZeroInflatedPoisson Regression Results                    
+===============================================================================
+Dep. Variable:                     art   No. Observations:                  915
+Model:             ZeroInflatedPoisson   Df Residuals:                      909
+Method:                            MLE   Df Model:                            5
+Date:                 Wed, 07 May 2025   Pseudo R-squ.:                 0.03490
+Time:                         18:26:56   Log-Likelihood:                -1620.8
+converged:                        True   LL-Null:                       -1679.4
+Covariance Type:             nonrobust   LLR p-value:                 1.221e-23
+==================================================================================
+                     coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+inflate_const     -1.6814      0.135    -12.421      0.000      -1.947      -1.416
+Intercept          0.5540      0.111      4.982      0.000       0.336       0.772
+fem_dummy[T.1]    -0.2316      0.059     -3.952      0.000      -0.346      -0.117
+mar_dummy[T.1]     0.1319      0.066      1.999      0.046       0.003       0.261
+kid5              -0.1705      0.043     -3.953      0.000      -0.255      -0.086
+phd                0.0025      0.028      0.089      0.929      -0.053       0.058
+ment               0.0215      0.002     10.237      0.000       0.017       0.026
+==================================================================================
+         Current function value: nan
+         Iterations: 4
+         Function evaluations: 118
+         Gradient evaluations: 118
+
+Zero-Inflated Negative Binomial Model:
+                     ZeroInflatedNegativeBinomialP Regression Results                    
+=========================================================================================
+Dep. Variable:                               art   No. Observations:                  915
+Model:             ZeroInflatedNegativeBinomialP   Df Residuals:                      909
+Method:                                      MLE   Df Model:                            5
+Date:                           Wed, 07 May 2025   Pseudo R-squ.:                     nan
+Time:                                   18:26:56   Log-Likelihood:                    nan
+converged:                                 False   LL-Null:                       -1609.9
+Covariance Type:                       nonrobust   LLR p-value:                       nan
+==================================================================================
+                     coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------
+inflate_const   -603.8388        nan        nan        nan         nan         nan
+Intercept         69.1211        nan        nan        nan         nan         nan
+fem_dummy[T.1]    45.5529        nan        nan        nan         nan         nan
+mar_dummy[T.1]    24.2629        nan        nan        nan         nan         nan
+kid5              42.1712        nan        nan        nan         nan         nan
+phd               -8.9554        nan        nan        nan         nan         nan
+ment              -4.8377        nan        nan        nan         nan         nan
+alpha           -307.7003        nan        nan        nan         nan         nan
+==================================================================================
+
+Comparison of all models (AIC/BIC):
+Poisson: AIC = 3314.11, BIC = -4564.03
+Neg. Binomial: AIC = 3135.92, BIC = 3169.65
+ZIP: AIC = 3255.57, BIC = 3289.30
+ZINB: AIC = nan, BIC = nan
+Best model by AIC: Neg. Binomial (AIC = 3135.92)
+
+======================================================================
+6. COUNT REGRESSION TREE (CORE) IMPLEMENTATION
+======================================================================
+
+6.1 Building Count Regression Tree
+----------------------------------------
+
+Preparing data for Count Regression Tree...
+
+Fitting Count Regression Tree with cross-validation...
+Cross-validating with alpha=0...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+  Mean deviance: 218.0319
+Cross-validating with alpha=0.001...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+  Mean deviance: 218.0319
+Cross-validating with alpha=0.01...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+  Mean deviance: 218.0319
+Cross-validating with alpha=0.1...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+  Mean deviance: 218.0319
+Cross-validating with alpha=0.5...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+  Mean deviance: 218.0319
+Cross-validating with alpha=1.0...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+Building Count Regression Tree...
+  Mean deviance: 218.0319
+
+Best alpha from cross-validation: 0 (deviance: 218.0319)
+Building Count Regression Tree...
+
+Final Count Regression Tree structure:
+Split: Mentors <= 13.000, n=915, improvement=123.9613
+Best model: poisson (AIC=3487.15)
+Left branch:
+  Split: Mentors <= 2.000, n=729, improvement=53.1575
+  Best model: poisson (AIC=2499.87)
+  Left branch:
+    Split: Single <= 0.000, n=221, improvement=13.6586
+    Best model: poisson (AIC=641.24)
+    Left branch:
+      Leaf Node: n=66, prediction=0.606
+      Best model: poisson (AIC=143.90)
+    Right branch:
+      Leaf Node: n=155, prediction=1.116
+      Best model: poisson (AIC=485.68)
+  Right branch:
+    Split: Kids under 5 <= 2.000, n=508, improvement=4.6734
+    Best model: poisson (AIC=1807.47)
+    Left branch:
+      Leaf Node: n=496, prediction=1.659
+      Best model: poisson (AIC=1772.52)
+    Right branch:
+      Leaf Node: n=12, prediction=0.917
+      Best model: poisson (AIC=32.27)
+Right branch:
+  Split: PhD Quality <= 1.860, n=186, improvement=23.2045
+  Best model: poisson (AIC=865.32)
+  Left branch:
+    Leaf Node: n=12, prediction=5.167
+    Best model: poisson (AIC=113.86)
+  Right branch:
+    Split: Female <= 0.000, n=174, improvement=9.2326
+    Best model: poisson (AIC=730.25)
+    Left branch:
+      Leaf Node: n=102, prediction=2.833
+      Best model: poisson (AIC=445.27)
+    Right branch:
+      Leaf Node: n=72, prediction=2.097
+      Best model: poisson (AIC=277.75)
+
+Analysis complete!

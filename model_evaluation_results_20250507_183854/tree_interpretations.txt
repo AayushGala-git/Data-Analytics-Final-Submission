@@ -1,0 +1,18 @@
+CORE TREE INTERPRETATIONS
+========================
+
+Node 0: Number of mentors threshold: 13.000
+
+Node 1: Number of mentors threshold: 2.000
+
+Node 2: Marital status threshold: 0.000
+  Interpretation: Marital status affects publication counts, particularly for those with fewer mentors.
+
+Node 5: Number of kids under 5 threshold: 2.000
+
+Node 8: PhD quality score threshold: 1.860
+  Interpretation: PhD quality becomes an important factor for researchers with more mentors.
+
+Node 10: Gender threshold: 0.000
+  Interpretation: Gender appears to have an effect on publication counts after accounting for mentorship and PhD quality.
+

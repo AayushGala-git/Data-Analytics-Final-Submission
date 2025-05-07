@@ -1,0 +1,70 @@
+|--- Mentors <= 17.50
+|   |--- Mentors <= 2.50
+|   |   |--- Marital Status <= 0.50
+|   |   |   |--- PhD Quality <= 3.50
+|   |   |   |   |--- PhD Quality <= 2.03
+|   |   |   |   |   |--- value: [1.42]
+|   |   |   |   |--- PhD Quality >  2.03
+|   |   |   |   |   |--- value: [0.76]
+|   |   |   |--- PhD Quality >  3.50
+|   |   |   |   |--- Mentors <= 1.50
+|   |   |   |   |   |--- value: [1.75]
+|   |   |   |   |--- Mentors >  1.50
+|   |   |   |   |   |--- value: [1.12]
+|   |   |--- Marital Status >  0.50
+|   |   |   |--- PhD Quality <= 3.20
+|   |   |   |   |--- Mentors <= 1.50
+|   |   |   |   |   |--- value: [0.31]
+|   |   |   |   |--- Mentors >  1.50
+|   |   |   |   |   |--- value: [0.76]
+|   |   |   |--- PhD Quality >  3.20
+|   |   |   |   |--- PhD Quality <= 4.03
+|   |   |   |   |   |--- value: [1.15]
+|   |   |   |   |--- PhD Quality >  4.03
+|   |   |   |   |   |--- value: [0.40]
+|   |--- Mentors >  2.50
+|   |   |--- Mentors <= 10.50
+|   |   |   |--- PhD Quality <= 3.56
+|   |   |   |   |--- PhD Quality <= 2.45
+|   |   |   |   |   |--- value: [1.47]
+|   |   |   |   |--- PhD Quality >  2.45
+|   |   |   |   |   |--- value: [1.84]
+|   |   |   |--- PhD Quality >  3.56
+|   |   |   |   |--- PhD Quality <= 4.32
+|   |   |   |   |   |--- value: [1.24]
+|   |   |   |   |--- PhD Quality >  4.32
+|   |   |   |   |   |--- value: [1.85]
+|   |   |--- Mentors >  10.50
+|   |   |   |--- PhD Quality <= 1.72
+|   |   |   |   |--- value: [0.33]
+|   |   |   |--- PhD Quality >  1.72
+|   |   |   |   |--- PhD Quality <= 4.44
+|   |   |   |   |   |--- value: [1.99]
+|   |   |   |   |--- PhD Quality >  4.44
+|   |   |   |   |   |--- value: [2.70]
+|--- Mentors >  17.50
+|   |--- PhD Quality <= 2.15
+|   |   |--- PhD Quality <= 1.82
+|   |   |   |--- value: [3.80]
+|   |   |--- PhD Quality >  1.82
+|   |   |   |--- value: [8.80]
+|   |--- PhD Quality >  2.15
+|   |   |--- Gender (Female) <= 0.50
+|   |   |   |--- PhD Quality <= 2.57
+|   |   |   |   |--- value: [1.17]
+|   |   |   |--- PhD Quality >  2.57
+|   |   |   |   |--- Kids under 5 <= 1.50
+|   |   |   |   |   |--- value: [3.55]
+|   |   |   |   |--- Kids under 5 >  1.50
+|   |   |   |   |   |--- value: [2.08]
+|   |   |--- Gender (Female) >  0.50
+|   |   |   |--- Marital Status <= 0.50
+|   |   |   |   |--- Mentors <= 26.50
+|   |   |   |   |   |--- value: [3.07]
+|   |   |   |   |--- Mentors >  26.50
+|   |   |   |   |   |--- value: [1.83]
+|   |   |   |--- Marital Status >  0.50
+|   |   |   |   |--- PhD Quality <= 3.27
+|   |   |   |   |   |--- value: [2.60]
+|   |   |   |   |--- PhD Quality >  3.27
+|   |   |   |   |   |--- value: [1.07]
